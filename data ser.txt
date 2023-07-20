@@ -1,0 +1,83 @@
+Emp_Id    Emp_name    Salary    Manager_Id
+10            Anil    50000    18
+11            Vikas    75000    16
+12            Nisha    40000    18
+13            Nidhi    60000    17
+14            Priya    80000    18
+15            Mohit    45000    18
+16            Rajesh    90000    –
+17            Raman    55000    16
+18            Santosh    65000    17
+Write a query to generate below output:
+ 
+Manager_Id    Manager    Average_Salary_Under_Manager
+16            Rajesh    65000
+17            Raman    62500
+18            Santosh    53750
+
+select manager_id,Emp_name as Manager,AVG(Salary) 
+as Average_Salary_Under_Manager from table1 group by manager_id,Emp_name order by manager_id;
+
+
+Reporting_Manager     Emp_name
+Rajesh                Vikas,Raman  
+Raman                Santosh,Nidhi
+Santosh                Anil,Nisha,Priya,Mohit
+
+select order by manager_id
+
+ {
+    "fruit": "Apple",
+    "size": "Large",
+    "color": "Red"
+}
+
+import json
+  
+# Opening JSON file
+f = open('data.json')
+  
+# returns JSON object as 
+# a dictionary
+data = json.load(f)
+  
+# Iterating through the json
+# list
+for i in data['emp_details']:
+    print(i)
+  
+# Closing file
+f.close()
+
+# Python program to read
+# json file
+  
+  
+import json
+  
+  
+# JSON string
+a = '{"name": "Bob", "languages": "English"}'
+  
+# deserializes into dict 
+# and returns dict.
+y = json.loads(a)
+  
+print("JSON string = ", y)
+print()
+  
+  
+  
+# JSON file
+f = open ('data.json', "r")
+  
+# Reading from file
+data = json.loads(f.read())
+  
+# Iterating through the json
+# list
+for i in data['emp_details']:
+    print(i)
+  
+# Closing file
+f.close()
